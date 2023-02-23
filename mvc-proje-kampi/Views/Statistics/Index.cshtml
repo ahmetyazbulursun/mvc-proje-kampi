@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+             
+<p>Toplam kategori sayısı: @ViewBag.KategoriSayisi</p>
+<p>Başlık tablosunda "yazılım" kategorisine ait başlık sayısı: @ViewBag.YazilimBaslikSayi</p>
+<p>Yazar adında 'a' harfi geçen yazar sayısı: @ViewBag.YazarAHarf</p>
+<p>En fazla başlığa sahip kategori adı: @ViewBag.EnFazlaBaslikKategori</p>
+<p>Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark: @ViewBag.KategoriFark</p>

@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    if (x.Description == null)
+                    {
+                        x.Description = "Açıklama bilgisi mevcut değil";
+                    }
+                    <tr>
+                        <td>@x.Name</td>
+                        <td>@x.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/Category/AddCategory" class="btn btn-info">Yeni Kategori</a>
+
+</div>
+

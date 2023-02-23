@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 mt-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-block">
+                    <h3 class="m-2 text-center font-weight-bold">Kategori Güncelle</h3>
+                </div>
+            </div>
+            <div class="jumbotron bg-transparent">
+                @using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Post))
+                {
+                    <div class="row mb-3">
+                        @Html.Label("Kategori Adı", new { @class = "form-label" })
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Kategori adı.." })
+                        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="row mb-3">
+                        @Html.Label("Açıklama", new { @class = "form-label" })
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Açıklama..", @rows = "7" })
+                        @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="row mb-3">
+                        <button type="submit" class="btn btn-success btn-block"><i class="fa fa-pen"></i></button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
